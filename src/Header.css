@@ -1,0 +1,29 @@
+/* .navbar {
+  background-color: white;
+  height: 8rem;
+
+  padding: 1rem;
+} */
+
+.logo-brand {
+  width: 8rem;
+  height: 8rem;
+}
+.btn {
+  margin-right: 1rem;
+}
+.icon-search {
+  position: relative;
+  top: 2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  right: 0.5rem;
+}
+input {
+  text-indent: 26px;
+}
+.btn-info {
+  background-color: #ab2eee !important;
+  border: none;
+  color: white;
+}

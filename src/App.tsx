@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import Crosel from "./Crosel";
+import { Product } from "./ProductsInterface";
+import Header from "./Header";
+import Navbar from "./Navbar";
+
+export default class App extends Component {
+  constructor(props: Product) {
+    super(props);
+    this.state = {
+      Products: [],
+    };
+  }
+  componentDidMount() {
+    try {
+      fetch(
+        "https://api.rabani.com/api/HomePage/Products?type=TYPE.CATEGORY&query=133,0"
+      )
+        .then((response) => response.json())
+        .then((Data) => {
+          this.setState({ products: Data.Data });
+          console.log(this.state);
+        });
+    } catch {}
+  }
+  render(): React.ReactNode {
+    return (
+      <>
+        <div className='App'>
+          <Header />
+          <Navbar />
+        </div>
+
+        <div className='container-fluid'>
+          <div className='row'>
+            <Crosel />
+          </div>
+        </div>
+      </>
+    );
+  }
 }
-
-export default App;
