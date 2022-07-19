@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import Crosel from "./Crosel";
-import { Product } from "./ProductsInterface";
+import Product from "./ProductsInterface";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import swiper from "./swiper";
 import SwiperComponent from "./swiper";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
 
 export default class App extends Component {
   constructor(props: Product) {
@@ -39,9 +37,7 @@ export default class App extends Component {
         <div className='container-fluid'>
           <div className='row'>
             <Crosel />
-            <Provider store={store}>
-              <SwiperComponent />
-            </Provider>
+            <SwiperComponent />
           </div>
         </div>
       </>

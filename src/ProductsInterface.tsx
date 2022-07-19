@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export interface Product {
+interface Product {
   Name: string;
   ShortDescription: null;
   Sku: string;
@@ -40,3 +40,4 @@ export interface Product {
   Id: number;
   CustomProperties: {};
 }
+export default Product;

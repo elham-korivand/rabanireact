@@ -12,8 +12,8 @@ import "./swiper.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
-import { Product } from "./ProductsInterface";
 import { url } from "inspector";
+import Product from "./ProductsInterface";
 
 function SwiperComponent(): JSX.Element {
   return (
@@ -43,7 +43,7 @@ function SwiperComponent(): JSX.Element {
     </>
   );
 }
-const mapStateToProps = (state: any, ownProps: Product) => {
-  return { items: state.products };
-};
-export default connect(mapStateToProps)(SwiperComponent);
+// const mapStateToProps = (state: any, ownProps: Product) => {
+//   return { items: state.products };
+// };
+export default SwiperComponent;
